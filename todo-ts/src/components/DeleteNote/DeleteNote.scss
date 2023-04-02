@@ -1,0 +1,24 @@
+.delete-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px auto;
+  font-size: 16;
+  color: #fff;
+  background-color: #ff6961;
+  border: none;
+  border-radius: 10%;
+  width: 3.5rem;
+  height: 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+
+  &:hover {
+    background-color: #e16058;
+    cursor: pointer;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #fff, 0 0 0 4px #ff6961;
+  }
+}

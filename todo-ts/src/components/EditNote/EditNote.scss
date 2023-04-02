@@ -1,0 +1,77 @@
+.edit-note {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+
+  &__input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    padding: 10px;
+    margin-bottom: 10px;
+    width: 100%;
+
+    &:focus {
+      outline: none;
+      border-color: #333;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+
+    .tag {
+      background-color: #f0f0f0;
+      border-radius: 3px;
+      color: #666;
+      font-size: 12px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+
+    button {
+      background-color: #333;
+      border: none;
+      border-radius: 3px;
+      color: #fff;
+      cursor: pointer;
+      font-size: 14px;
+      padding: 5px 10px;
+      margin-right: 10px;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: #555;
+      }
+
+      &:last-child {
+        background-color: #ccc;
+        color: #333;
+
+        &:hover {
+          background-color: #ddd;
+        }
+      }
+    }
+  }
+}

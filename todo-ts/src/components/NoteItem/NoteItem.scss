@@ -1,0 +1,25 @@
+.note-item {
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-bottom: 10px;
+
+  .note-text {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 5px;
+
+    .tag {
+      background-color: #eee;
+      border: 1px solid #ccc;
+      padding: 2px 5px;
+      margin-right: 5px;
+      margin-bottom: 5px;
+    }
+  }
+}
