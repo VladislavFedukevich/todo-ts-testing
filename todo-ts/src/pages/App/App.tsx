@@ -32,7 +32,7 @@ const App = () => {
     setSelectedNote(note || null);
   };
 
-  const handleEditNote = (text: string, tags: string[]) => {
+  const handleEditNote = (id: number, text: string, tags: string[]) => {
     if (!selectedNote) return;
     const updatedNote: Note = {
       ...selectedNote,
@@ -52,6 +52,7 @@ const App = () => {
       <NoteList
         notes={notes}
         onDeleteNote={handleDeleteNote}
+        onUpdateNote={handleEditNote} // добавлено свойство onUpdateNote
       />
       <AddNote onAddNote={handleAddNote} />
     </div>

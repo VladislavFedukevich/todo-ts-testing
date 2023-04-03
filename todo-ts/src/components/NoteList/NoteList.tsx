@@ -1,5 +1,5 @@
 import React from 'react';
-import NoteItem from '../../components/NoteItem/NoteItem';
+import NoteItem from '../NoteItem/NoteItem';
 
 type Note = {
   id: number;
@@ -10,16 +10,22 @@ type Note = {
 type NoteListProps = {
   notes: Note[];
   onDeleteNote: (id: number) => void;
+  onUpdateNote: (id: number, newText: string, newTags: string[]) => void; // изменен тип параметра id на number
 };
 
-const NoteList: React.FC<NoteListProps> = ({ notes, onDeleteNote }) => {
+const NoteList: React.FC<NoteListProps> = ({ notes, onDeleteNote, onUpdateNote }) => {
   return (
-    <ul className="note-list">
+    <div className="note-list">
       {notes.map((note) => (
-        <NoteItem key={note.id} note={note} onDeleteNote={onDeleteNote} />
+        <NoteItem
+          key={note.id}
+          note={note}
+          onDeleteNote={onDeleteNote}
+          onUpdateNote={onUpdateNote} // передано свойство onUpdateNote
+        />
       ))}
-    </ul>
+    </div>
   );
 };
 
-export default NoteList;
+export default NoteList
