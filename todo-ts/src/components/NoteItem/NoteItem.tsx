@@ -4,7 +4,7 @@ import EditNote from '../EditNote/EditNote';
 
 import './NoteItem.scss';
 
-type Note = {
+export type Note = {
   id: number;
   text: string;
   tags: string[];

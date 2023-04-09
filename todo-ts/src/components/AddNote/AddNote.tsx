@@ -1,4 +1,7 @@
 import { useState } from 'react';
+
+import { Note } from '../NoteItem/NoteItem';
+
 import './AddNote.scss';
 
 type AddNoteProps = {
@@ -12,10 +15,23 @@ const AddNote: React.FC<AddNoteProps> = ({ onAddNote }) => {
   const handleAddNote = () => {
     if (noteText.length > 0) {
       const tagsArray = noteText.split('#').filter(Boolean).slice(1);
+      const newNote: Note = {
+        id: Date.now(),
+        text: noteText,
+        tags: tagsArray,
+      };
+      const updatedNotes = [...getNotesData(), newNote];
+      localStorage.setItem('notes', JSON.stringify(updatedNotes));
+      console.log(updatedNotes);
       onAddNote(noteText, tagsArray);
       setNoteText('');
       setTags([]);
     }
+  };
+
+  const getNotesData = (): Note[] => {
+    const notesData = localStorage.getItem('notes');
+    return notesData ? JSON.parse(notesData) : [];
   };
 
   const handleNoteChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -30,7 +46,7 @@ const AddNote: React.FC<AddNoteProps> = ({ onAddNote }) => {
         value={noteText}
         onChange={handleNoteChange}
       />
-      <button onClick={handleAddNote}>Add Note</button>
+      <button onClick={handleAddNote} >Add Note</button>
     </div>
   );
 };

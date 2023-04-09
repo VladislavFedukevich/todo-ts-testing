@@ -9,8 +9,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa;
+  height: 100%;
   text-align: center;
 }
 
@@ -47,5 +46,33 @@ body {
         border-radius: 0.25rem;
       }
     }
+  }
+}
+
+.app-toolbar {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+
+  span {
+    margin-right: 10px;
+  }
+
+  button {
+    margin-right: 10px;
+    padding: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $primary-color;
+      color: #fff;
+    }
+  }
+
+  button:last-child {
+    margin-right: 0;
   }
 }
