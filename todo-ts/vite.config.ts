@@ -11,9 +11,14 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
-  base: '/home', // имя вашего проекта
+  base: '/todo-ts/',
   build: {
     outDir: 'build',
     emptyOutDir: true,
+    rollupOptions: {
+      input: {
+        main: path.resolve(__dirname, 'index.html') 
+      }
+    }
   },
 });

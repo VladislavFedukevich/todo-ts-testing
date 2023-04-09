@@ -1,4 +1,13 @@
 [build]
-base = "todo-ts"
-command = "npm run build -- --base=/todo-ts/"
-publish = "dist"
+  command = "run-p start build"
+  publish = "build"
+
+[dev]
+  command = "vite"
+  port = 3000
+
+[[plugins]]
+  package = "netlify-plugin-vite"
+
+[build.environment]
+  CI = "false"
