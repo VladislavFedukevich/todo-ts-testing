@@ -1,0 +1,4 @@
+[build]
+base = "todo-ts"
+command = "npm run build -- --base=/todo-ts/"
+publish = "dist"

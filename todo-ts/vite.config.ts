@@ -11,4 +11,9 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
+  base: '/home', // имя вашего проекта
+  build: {
+    outDir: 'build',
+    emptyOutDir: true,
+  },
 });
