@@ -11,13 +11,13 @@ export default defineConfig({
       '@utils': path.resolve(__dirname, 'src/utils'),
     },
   },
-  base: '/todo-ts/',
+  base: '/todo-ts-testing/',
   build: {
     outDir: 'build',
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'index.html') 
+        main: path.resolve(__dirname, 'index.html')
       }
     }
   },
